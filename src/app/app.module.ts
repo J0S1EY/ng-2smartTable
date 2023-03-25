@@ -10,6 +10,7 @@ import { Ng2tableComponent } from './ng2table/ng2table.component';
 import { ViewDetailsComponent } from './view-details/view-details.component';
 import { AdminPageComponent } from './admin-page/admin-page.component';
 import { UserPageComponent } from './user-page/user-page.component';
+import { DeleteConfirmComponent } from './admin-page/delete-confirm/delete-confirm.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { UserPageComponent } from './user-page/user-page.component';
     ViewDetailsComponent,
     AdminPageComponent,
     UserPageComponent,
+    DeleteConfirmComponent,
    
   ],
   imports: [

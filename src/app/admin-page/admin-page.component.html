@@ -1,1 +1,6 @@
-<p>admin-page works!</p>
+<div class="container" >
+    <ng2-smart-table [settings]="settings" [source]="data" (createConfirm)="onCreateConfirm($event)" *ngIf="!userData"
+        (editConfirm)="onEditConfirm($event)" (deleteConfirm)="deletedata($event)">
+    </ng2-smart-table>
+    <app-delete-confirm [data]="userData"  (onCancel)="userCancel()" (onDelete)="deleteUser($event)"></app-delete-confirm>
+</div>

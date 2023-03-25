@@ -1,0 +1,17 @@
+<div class="container" *ngIf="data && ! delete">
+    <form>
+        <h3>User Delete</h3>
+        <div class="img">
+            <img src={{data.avatar}} alt="User Photo" style="width:150px;height:150px;">
+        </div>
+        <label for="username">User Name : {{data.first_name}} {{data.last_name}} </label>
+
+        <label for="username">User ID : {{data.id}}</label>
+
+        <div class="social">
+            <div (click)="deleteUser()" type="button" class="delete"><i class="fa-solid fa-user-xmark"></i>Delete</div>
+
+            <div (click)="cancel()" type="button" class="cancel"><i class="fa-solid fa-rectangle-xmark"></i> Cancel</div>
+        </div>
+    </form>
+</div>

@@ -47,8 +47,11 @@ export class Ng2tableComponent implements OnInit {
 
   ngOnInit(): void {
     this.apiData.getUserdata().subscribe((users: any) => {
-      this.data = users.data;
-      this.source = new LocalDataSource(this.data);
+      this.data = users.data; // data from  api
+      this.apiData.userData.next(users.data)
+      let userCount=this.data.length.toString() // total users count 
+      this.source = new LocalDataSource(this.data);  // users data to ng2 smart table
+      this.apiData.count.next(userCount) //users count to header using behaviour subject
     });
   }
 // fetch id and navigate to view user
