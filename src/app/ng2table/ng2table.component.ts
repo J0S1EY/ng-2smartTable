@@ -10,9 +10,8 @@ import { Router } from '@angular/router';
 })
 export class Ng2tableComponent implements OnInit {
 
-
-
   data: any[] = [];
+
 
   settings = {
     columns: {
@@ -35,9 +34,9 @@ export class Ng2tableComponent implements OnInit {
       email: {
         title: 'Email',
       },
-
     },
     actions: false,
+
 
   };
 
@@ -49,15 +48,20 @@ export class Ng2tableComponent implements OnInit {
     this.apiData.getUserdata().subscribe((users: any) => {
       this.data = users.data; // data from  api
       this.apiData.userData.next(users.data)
-      let userCount=this.data.length.toString() // total users count 
+      let userCount = this.data.length.toString() // total users count 
       this.source = new LocalDataSource(this.data);  // users data to ng2 smart table
       this.apiData.count.next(userCount) //users count to header using behaviour subject
     });
   }
-// fetch id and navigate to view user
+  // fetch id and navigate to view user
   onRowSelect(event: any) {
     let id = event.data.id;
-    this.router.navigateByUrl('viewUser/' + id)
+
+    setTimeout(() => {
+      this.router.navigateByUrl('viewUser/' + id)
+    }, 200);
+
+
   }
 
 }

@@ -11,12 +11,17 @@ export class UserPageComponent implements OnInit {
   data: LocalDataSource;
   settings = {
     columns: {
+      avatar: {
+        title: 'Image URL',
+      },
       id: {
         title: 'ID',
-
       },
-      name: {
-        title: 'Full Name',
+      first_name: {
+        title: 'First Name',
+      },
+      last_name: {
+        title: 'First Name',
       },
       email: {
         title: 'Email',
@@ -42,13 +47,15 @@ export class UserPageComponent implements OnInit {
     this.data = new LocalDataSource([
       {
         id: 1,
-        name: 'Patricia Lebsack',
+        first_name: 'Patricia ',
+        last_name: 'Lebsack',
         email: 'Julianne.OConner@kory.org',
 
       },
       {
         id: 2,
-        name: 'Chelsey Dietrich',
+        first_name: 'Chelsey',
+        last_name: 'Lebsack',
         email: 'Lucio_Hettinger@annie.ca',
 
       },
